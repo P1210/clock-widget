@@ -1,0 +1,129 @@
+.timer-box {
+  aspect-ratio: 16/9;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gradient-container {
+  height: 100%;
+  width: 100%;
+  transition: background 1.5s ease-in-out !important;
+}
+
+.background-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* prevents distortion while filling the container */
+  object-position: left bottom;
+  position: relative;
+}
+
+button {
+  position: absolute;
+  bottom: 4%;
+  right: 4%;
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #ffffffcc;
+  color: #333;
+  font-weight: bold;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}
+
+.character {
+  position: absolute;
+  bottom: 10vh;
+  left: calc(20% + 2vw);
+  width: 10%;
+  z-index: 10;
+  transform-origin: bottom center;
+  transition: all 0.3s ease;
+}
+
+/* Tall screens (portrait mobile/tablets) */
+@media (max-aspect-ratio: 3/4) {
+  .character {
+    left: 50%;
+    bottom: 8vh;
+    width: 120px;
+  }
+}
+
+/* Square-ish screens */
+@media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 5/4) {
+  .character {
+    left: calc(32% + 2vw);
+    bottom: 8vh;
+    width: 120px;
+  }
+}
+
+/* Standard landscape screens */
+@media (min-aspect-ratio: 5/4) and (max-aspect-ratio: 21/9) {
+  .character {
+    left: calc(22% + 2vw);
+    bottom: 9vh;
+    transform: none;
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-aspect-ratio: 21/9) {
+  .character {
+    left: calc(20%);
+    bottom: 8vh;
+  }
+}
+
+/* .character {
+  position: absolute;
+  bottom: 10vh;
+  left: calc(20% + 2vw);
+  width: 10%;
+  z-index: 10;
+  transform-origin: bottom center;
+} */
+
+/* Media queries for different aspect ratios to maintain tree trunk alignment */
+/* @media (max-aspect-ratio: 16/9) {
+  .character {
+    left: calc(20% + 2vw);
+    bottom: 8vh;
+  }
+}
+
+@media (min-aspect-ratio: 21/9) {
+  .character {
+    left: calc(20% + 1vw);
+    bottom: 6vh;
+  }
+} */
+
+/* @media screen and (max-width: 1024px) {
+  .character {
+    left: calc(22% + 2vw);
+    bottom: 8vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .character {
+    left: calc(20% + 2vw);
+    bottom: 8vh;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .character {
+    left: 50%;
+    bottom: 10vh;
+  }
+} */
