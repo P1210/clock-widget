@@ -19,7 +19,7 @@
   position: relative;
 }
 
-button {
+/* button {
   position: absolute;
   bottom: 4%;
   right: 4%;
@@ -31,6 +31,29 @@ button {
   background-color: #ffffffcc;
   color: #333;
   font-weight: bold;
+  z-index: 100;
+} */
+
+button {
+  position: absolute;
+  bottom: 4%;
+  right: 4%;
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  background:  #ffffffbf;
+  backdrop-filter: blur(2px);
+  color: black;
+  padding: 16px;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(194, 194, 194, 0.4);
+  z-index: 100;
 }
 
 .img {
@@ -42,7 +65,7 @@ button {
   position: absolute;
   bottom: 10vh;
   left: calc(20% + 2vw);
-  width: 10%;
+  width: 12%;
   z-index: 10;
   transform-origin: bottom center;
   transition: all 0.3s ease;
@@ -53,7 +76,7 @@ button {
   .character {
     left: 50%;
     bottom: 8vh;
-    width: 120px;
+    width: 140px;
   }
 }
 
@@ -62,7 +85,7 @@ button {
   .character {
     left: calc(32% + 2vw);
     bottom: 8vh;
-    width: 120px;
+    width: 140px;
   }
 }
 

@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import flower_garden from "./assets/flower-garden min.svg";
-import luna_reading from "./assets/luna idle - reading-min.svg";
+import garden from "./assets/garden.svg";
+import luna_reading from "./assets/luna-reading.svg";
+import { Expand, Maximize } from "lucide-react";
 
 function Timer() {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -50,7 +51,7 @@ function Timer() {
     element.classList.remove(...gradientClasses);
     overlay.classList.remove(...gradientClasses);
     element.classList.add("gradient-container");
-    overlay.classList.add("gradient-overlay");
+    // overlay.classList.add("gradient-overlay");
 
     // Apply the correct gradient based on time
     let timeClass = "";
@@ -72,9 +73,7 @@ function Timer() {
       timeClass = "sunset-6-7pm";
     } else if (hours >= 19 && hours < 20) {
       timeClass = "dusk-7-8pm";
-    } else if (hours >= 20 && hours < 22) {
-      timeClass = "twilight-8-10pm";
-    } else if (hours >= 22 && hours < 24) {
+    } else if (hours >= 20 && hours < 24) {
       timeClass = "early-night-10pm-12am";
     } else if (hours >= 0 && hours < 2) {
       timeClass = "deep-night-12-2am";
@@ -92,7 +91,7 @@ function Timer() {
 
   const formatTime = useCallback(() => {
     const now = new Date();
-    return `${now.getHours()} : ${now
+    return `${now.getHours().toString().padStart(2, "0")} : ${now
       .getMinutes()
       .toString()
       .padStart(2, "0")} : ${now.getSeconds().toString().padStart(2, "0")}`;
@@ -110,7 +109,7 @@ function Timer() {
       setTimeString(formatTime());
     }, 1000);
 
-    const gradientInterval = setInterval(updateGradient, 300000); // 5 minutes
+    const gradientInterval = setInterval(updateGradient, 60000); // 1 minute
 
     return () => {
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
@@ -122,21 +121,30 @@ function Timer() {
   return (
     <div ref={componentRef} className="timer-box">
       <div className="gradient-container">
-        <img src={flower_garden} alt="Background" className="background-img" />
-
-        <div ref={overlayRef} className="gradient-overlay"></div>
-
-        <div className="character">
-          <img src={luna_reading} alt="Luna reading" className="img" />
-        </div>
+        <img src={garden} alt="Background" className="background-img" />
 
         <div className="clock">
           <div className="timer-kawaii">{timeString}</div>
         </div>
 
         {!isFullscreen && (
-          <button onClick={handleFullscreen}>Enter Fullscreen</button>
+          <button onClick={handleFullscreen}>
+            <Maximize />
+          </button>
         )}
+
+        {(() => {
+          const hour = new Date().getHours();
+          return hour >= 19 || hour <= 5 ? (
+            <div ref={overlayRef} className="gradient-night"></div>
+          ) : (
+            <div ref={overlayRef}></div>
+          );
+        })()}
+
+        <div className="character">
+          <img src={luna_reading} alt="Luna reading" className="img" />
+        </div>
       </div>
     </div>
   );

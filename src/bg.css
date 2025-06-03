@@ -17,20 +17,25 @@
 }
 
 .late-afternoon-4-5pm {
-  background: linear-gradient(to top, #bee9ff, #ffdfbf, #ffe5b4);
+  background: linear-gradient(to top, #bee9ff, #ffcbb3, #ffe699);
 }
 
 .golden-hour-5-6pm {
-  background: linear-gradient(to top, #ffcab2, #ffdf80);
+  background: linear-gradient(to top, #ffcbb3, #ffe699);
 }
 
 /* Evening */
 .sunset-6-7pm {
-  background: linear-gradient(to top, #bfa2db, #ffb2aa, #ffcab2);
+  background: linear-gradient(
+    to bottom,
+    hsl(220, 44%, 40%),
+    /* hsl(45, 100%, 80%), */
+    hsl(19, 100%, 85%)
+  );
 }
 
 .dusk-7-8pm {
-  background: linear-gradient(to top, #9f91cc, #bfa2db);
+  background: linear-gradient(to top, hsl(228, 25%, 60%), #2c3e50);
 }
 
 .twilight-8-10pm {
@@ -58,14 +63,25 @@
   background: linear-gradient(to top, #3772a9, #fceae3);
 }
 
-.gradient-overlay {
+/* .gradient-overlay { 
+ position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.25;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 20; 
+ } */
+
+.gradient-night {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0; 
-  opacity: 0.75;
-  mix-blend-mode: overlay; 
-  pointer-events: none;
-   z-index: 20;
+  bottom: 0;
+  opacity: 0.4;
+  mix-blend-mode: color-burn;
+  z-index: 20;
 }
