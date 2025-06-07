@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import garden from "./assets/garden.svg";
 import luna_reading from "./assets/luna-reading.svg";
 import { Expand, Maximize } from "lucide-react";
+import Counter from "./Clock";
 
 function Timer() {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -124,7 +125,20 @@ function Timer() {
         <img src={garden} alt="Background" className="background-img" />
 
         <div className="clock">
-          <div className="timer-kawaii">{timeString}</div>
+          {/* <div className="time">{timeString}</div> */}
+          {timeString.split(" : ").map((t, index) => {
+            return (
+              <>
+                <Counter
+                  value={t}
+                  fontSize={80}
+                  textColor="white"
+                  fontWeight={900}
+                />
+                {index !== timeString.split(" : ").length - 1 && " : "}
+              </>
+            );
+          })}
         </div>
 
         {!isFullscreen && (

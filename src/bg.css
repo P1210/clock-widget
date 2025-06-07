@@ -28,7 +28,7 @@
 .sunset-6-7pm {
   background: linear-gradient(
     to bottom,
-    hsl(220, 44%, 40%),
+    hsl(220, 44%, 60%),
     /* hsl(45, 100%, 80%), */
     hsl(19, 100%, 85%)
   );
