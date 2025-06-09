@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import garden from "./assets/backgrounds/garden/garden.svg";
-import luna_reading from "./assets/leo/leo-sitting.svg";
+import luna_reading from "./assets/luna/luna-reading.svg";
 import { Expand, Maximize } from "lucide-react";
 import Counter from "./Clock";
 
