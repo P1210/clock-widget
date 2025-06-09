@@ -83,7 +83,7 @@ button {
 /* Square-ish screens */
 @media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 5/4) {
   .character {
-    left: calc(32% + 2vw);
+    left: calc(32% + 0vw);
     bottom: 8vh;
     width: 140px;
   }
@@ -92,7 +92,7 @@ button {
 /* Standard landscape screens */
 @media (min-aspect-ratio: 5/4) and (max-aspect-ratio: 21/9) {
   .character {
-    left: calc(22% + 2vw);
+    left: calc(20% + 0vw);
     bottom: 9vh;
     transform: none;
   }

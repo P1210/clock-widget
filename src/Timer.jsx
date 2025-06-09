@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import garden from "./assets/garden.svg";
-import luna_reading from "./assets/luna-reading.svg";
+import garden from "./assets/backgrounds/garden/garden.svg";
+import luna_reading from "./assets/leo/leo-sitting.svg";
 import { Expand, Maximize } from "lucide-react";
 import Counter from "./Clock";
 
@@ -25,7 +25,7 @@ function Timer() {
 
   const updateGradient = useCallback(() => {
     const now = new Date();
-    const hours = now.getHours() ;
+    const hours = now.getHours();
     const element = componentRef.current;
     const overlay = overlayRef.current;
 
