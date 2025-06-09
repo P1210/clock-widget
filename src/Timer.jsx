@@ -25,7 +25,7 @@ function Timer() {
 
   const updateGradient = useCallback(() => {
     const now = new Date();
-    const hours = now.getHours();
+    const hours = now.getHours() ;
     const element = componentRef.current;
     const overlay = overlayRef.current;
 
@@ -126,17 +126,20 @@ function Timer() {
 
         <div className="clock">
           {/* <div className="time">{timeString}</div> */}
+
           {timeString.split(" : ").map((t, index) => {
             return (
-              <>
+              <div className="timer-kawaii">
                 <Counter
                   value={t}
-                  fontSize={80}
-                  textColor="white"
+                  fontSize={70}
+                  // textColor="#8b4b6b"
                   fontWeight={900}
                 />
-                {index !== timeString.split(" : ").length - 1 && " : "}
-              </>
+                {/* {index !== timeString.split(" : ").length - 1 && (
+                  <span style={{ color: "#fff", fontSize: "40px" }}>:</span>
+                )} */}
+              </div>
             );
           })}
         </div>

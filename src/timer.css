@@ -6,44 +6,55 @@
   z-index: 1000;
 }
 
-.clock{
+.clock {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap:0.5rem;
+  gap: 0.5rem;
+  width: max-content;
 }
 
 .timer-kawaii {
+  width: max-content;
   background: linear-gradient(145deg, #ffe4e6, #fff0f5);
-  border: 3px solid #ffb6c1;
-  border-radius: 50px;
-  padding: 20px 40px;
+  border: 2px solid #ffb6c1;
+  border-radius: 20px;
+  padding: 0.15rem 1.5rem;
   box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3),
     inset 0 2px 4px rgba(255, 255, 255, 0.8);
   font-family: "Fredoka", cursive;
-  font-size: 2.2em;
-  font-weight: 600;
+  /* font-size: 2.2em;
+  font-weight: 600; */
   color: #8b4b6b;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   position: relative;
+  /* box-shadow: 0 2px 0 #8b4b6b, inset 0 1px 1px rgba(255, 255, 255, 0.8); */
+  transform: translateY(0);
+  transition: all 0.1s ease;
 }
 
+.timer-kawaii:hover {
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 #8b4b6b, 0 6px 15px rgba(255, 182, 193, 0.3);
+}
+
+
 .timer-kawaii::before {
-  content: "✧";
+  content: "✦";
   position: absolute;
   left: -15px;
   top: -10px;
   color: #ffb6c1;
-  font-size: 0.8em;
+  font-size: 1.25em;
 }
 
 .timer-kawaii::after {
-  content: "✧";
+  content: "✦";
   position: absolute;
   right: -15px;
   bottom: -10px;
   color: #ffb6c1;
-  font-size: 0.8em;
+  font-size: 1.25em;
 }
 
 .timer-skyblue {
@@ -147,11 +158,12 @@
   background: linear-gradient(145deg, #00ff88, #00cc66);
   border: 4px solid #004d1a;
   border-radius: 15px;
-  padding: 18px 35px;
+  /* padding: 18px 35px; */
+  padding: 10px;
   box-shadow: 0 8px 0 #004d1a, 0 12px 20px rgba(0, 77, 26, 0.3);
   font-family: "Nunito", monospace;
-  font-size: 2em;
-  font-weight: 700;
+  /* font-size: 2em;
+  font-weight: 700; */
   color: #001a0a;
   text-shadow: 1px 1px 0 #00ff88;
   position: relative;
@@ -180,20 +192,21 @@
 
 /* Cloud Theme */
 .timer-cloud {
-  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  /* background: linear-gradient(145deg, #ffffff, #f8fafc); */
+  background: rgb(248, 250, 252);
   border: 3px solid #cbd5e1;
-  border-radius: 60px;
-  padding: 25px 50px;
-  box-shadow: 0 20px 40px rgba(203, 213, 225, 0.3),
-    inset 0 2px 4px rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 2px 16px;
+  /* box-shadow: 0 20px 40px rgba(203, 213, 225, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.9); */
   font-family: "Fredoka", cursive;
-  font-size: 2em;
-  font-weight: 600;
-  color: #475569;
+  /* font-size: 2em;
+  font-weight: 600; */
+  color: hsl(215, 19%, 25%);
   position: relative;
 }
 
-.timer-cloud::before,
+/* .timer-cloud::before,
 .timer-cloud::after {
   content: "☁️";
   position: absolute;
@@ -213,7 +226,7 @@
   top: 50%;
   transform: translateY(-50%);
   animation-delay: 4s;
-}
+} */
 
 @keyframes cloud-drift {
   0% {
