@@ -2,7 +2,6 @@
 
 A cute and cozy animated clock background featuring **custom avatar (Luna/Leo)**, character who hangs out under a tree. The background changes with the time of day, and everything is brought to life with subtle animations like fluttering petals, glowing fireflies, and soft breezes.
 
----
 
 ## ✨ What It Does
 
@@ -15,8 +14,7 @@ A cute and cozy animated clock background featuring **custom avatar (Luna/Leo)**
   - Hilltop
   - Forest Clearing
   - Lakeside with Sakura
-
----
+    
 
 ## 👀 Who It's For
 
@@ -25,7 +23,6 @@ A cute and cozy animated clock background featuring **custom avatar (Luna/Leo)**
 - Anyone who wants something relaxing and pretty on their phone or desktop
 - Those who enjoy small ambient animations instead of static designs
 
----
 
 ## 🛠️ How It’s Built
 
@@ -41,10 +38,10 @@ A cute and cozy animated clock background featuring **custom avatar (Luna/Leo)**
 - 🎨 Customizable outfits
 - 🕹️ Tap-based interactions (wake Luna, make birds fly, etc.)
 
----
 
-## 📸 Sneak Peek - https://p1210.github.io/clock-widget/
----
+## 📸 Sneak Peek
+
+ - https://p1210.github.io/clock-widget/
 
 
 Made with love, petals, and fireflies ✨
