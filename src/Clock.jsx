@@ -13,12 +13,12 @@ function AnimatedDigit({ digit, height }) {
       <AnimatePresence initial={false}>
         <motion.div
           key={digit}
-          initial={{ y: height }}
-          animate={{ y: 0 }}
-          exit={{ y: -height }}
-          transition={{ duration: 0.5 }}
+          initial={{ y: "100%", scale: 0 }} // during mount
+          animate={{ y: "0%", scale: 1 }}
+          exit={{ y: -"-100%", scale: 0 }} // during component unmount
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           style={{
-            height,
+            height: "100%",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -33,17 +33,17 @@ function AnimatedDigit({ digit, height }) {
   );
 }
 
-function Counter({ value, fontSize = 80, textColor }) {
-  const height = fontSize * 1.2;
+function Counter({ value, fontSize, textColor }) {
+  const height = `calc(${fontSize} * 1.2)`;
   return (
     <div
       style={{
         display: "flex",
-        gap:"0.25rem",
+        gap: "0.25rem",
         fontSize,
         fontWeight: "bold",
         fontVariantNumeric: "tabular-nums",
-        width: fontSize * 1.25,
+        width: `calc(${fontSize} * 1.35)`,
         color: textColor,
       }}
     >

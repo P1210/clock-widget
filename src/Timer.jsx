@@ -1,8 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import garden from "./assets/backgrounds/garden/garden.svg";
 import luna_reading from "./assets/luna/luna-reading.svg";
-import { Expand, Maximize } from "lucide-react";
+import { Maximize } from "lucide-react";
 import Counter from "./Clock";
+import { motion } from "framer-motion";
+import BirdsFlock from "./utils/BirdsFlock";
 
 function Timer() {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -92,10 +95,11 @@ function Timer() {
 
   const formatTime = useCallback(() => {
     const now = new Date();
-    return `${now.getHours().toString().padStart(2, "0")} : ${now
+    return `${now.getHours().toString().padStart(2, "0")}:${now
       .getMinutes()
       .toString()
-      .padStart(2, "0")} : ${now.getSeconds().toString().padStart(2, "0")}`;
+      .padStart(2, "0")}`;
+    // :${now.getSeconds().toString().padStart(2, "0")}`;
   }, []);
 
   useEffect(() => {
@@ -121,27 +125,21 @@ function Timer() {
 
   return (
     <div ref={componentRef} className="timer-box">
-      <div className="gradient-container">
+      <motion.div className="gradient-container" layout>
         <img src={garden} alt="Background" className="background-img" />
+        <BirdsFlock />
 
         <div className="clock">
-          {/* <div className="time">{timeString}</div> */}
-
-          {timeString.split(" : ").map((t, index) => {
-            return (
-              <div className="timer-kawaii">
-                <Counter
-                  value={t}
-                  fontSize={70}
-                  // textColor="#8b4b6b"
-                  fontWeight={900}
-                />
-                {/* {index !== timeString.split(" : ").length - 1 && (
-                  <span style={{ color: "#fff", fontSize: "40px" }}>:</span>
-                )} */}
-              </div>
-            );
-          })}
+          <div className="timer-kawaii">
+            {timeString.split(":").map((t, index) => {
+              return (
+                <React.Fragment key={index + t}>
+                  <Counter value={t} fontSize={"4.5rem"} fontWeight={900} />
+                  {index === 0 && <span>:</span>}
+                </React.Fragment>
+              );
+            })}
+          </div>
         </div>
 
         {!isFullscreen && (
@@ -159,10 +157,10 @@ function Timer() {
           );
         })()}
 
-        <div className="character">
+        <motion.div className="character" layout>
           <img src={luna_reading} alt="Luna reading" className="img" />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
